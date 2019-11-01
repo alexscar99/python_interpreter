@@ -1,2 +1,5 @@
-# python_interpreter
-Python interpreter written from scratch in python
+# Python Interpreter
+
+Byterun clone
+
+- Python interpreter written in Python
