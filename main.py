@@ -1,11 +1,26 @@
 from interpreter.interpreter import Interpreter
 
+
+def s():
+    a = 1
+    b = 2
+    print(a + b)
+
+
+# a friendly compiler transforms `s` into:
 what_to_execute = {
-    "instructions": [("LOAD_VALUE", 0),  # the first number
-                     ("LOAD_VALUE", 1),  # the second number
-                     ("ADD_TWO_VALUES", None),
-                     ("PRINT_ANSWER", None)],
-    "numbers": [7, 5]}
+    'instructions': [('LOAD_VALUE', 0),
+                     ('STORE_NAME', 0),
+                     ('LOAD_VALUE', 1),
+                     ('STORE_NAME', 1),
+                     ('LOAD_NAME', 0),
+                     ('LOAD_NAME', 1),
+                     ('ADD_TWO_VALUES', None),
+                     ('PRINT_ANSWER', None)],
+    'numbers': [1, 2],
+    'names': ['a', 'b']
+}
+
 
 interpreter = Interpreter()
-interpreter.run_code(what_to_execute)
+interpreter.execute(what_to_execute)
